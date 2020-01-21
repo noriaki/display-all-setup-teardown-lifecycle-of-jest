@@ -1,0 +1,18 @@
+{
+  "name": "display-all-setup-teardown-lifecycle-of-jest",
+  "version": "0.1.0",
+  "main": "index.test.js",
+  "repository": "git@github.com:noriaki/display-all-setup-teardown-lifecycle-of-jest.git",
+  "author": "Noriaki Uchiyama <uchiyama.noriaki@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "12.x"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
