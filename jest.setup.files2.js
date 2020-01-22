@@ -1,1 +1,3 @@
-console.log('setupFiles 2');
+const { appendFileSync } = require('fs');
+
+appendFileSync(global.logPath, `setupFiles 2 in ${global.basename}\n`);

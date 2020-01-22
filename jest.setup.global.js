@@ -1,6 +1,7 @@
-module.exports = async () => {
-  console.log(`
+const { resolve } = require('path');
+const { writeFileSync } = require('fs');
 
-globalSetup
-`);
+module.exports = async () => {
+  global.logPath = resolve('jest.console.log');
+  writeFileSync(global.logPath, 'globalSetup\n');
 };
