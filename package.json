@@ -13,6 +13,8 @@
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "debug": "^4.1.1",
+    "jest": "^24.9.0",
+    "supports-color": "^7.1.0"
   }
 }
