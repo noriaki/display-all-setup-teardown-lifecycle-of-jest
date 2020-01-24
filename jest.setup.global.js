@@ -1,7 +1,5 @@
-const { resolve } = require('path');
-const { writeFileSync } = require('fs');
+const debug = require('./src/logger')('jest:global');
 
 module.exports = async () => {
-  global.logPath = resolve('jest.console.log');
-  writeFileSync(global.logPath, 'globalSetup\n');
+  debug('globalSetup');
 };

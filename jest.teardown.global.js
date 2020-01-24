@@ -1,6 +1,5 @@
-const { appendFileSync, readFileSync } = require('fs');
+const debug = require('./src/logger')('jest:global');
 
 module.exports = async () => {
-  appendFileSync(global.logPath, 'globalTeardown\n');
-  console.log(readFileSync(global.logPath, 'utf8'));
+  debug('globalTeardown');
 };
