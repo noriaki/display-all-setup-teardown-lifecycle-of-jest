@@ -6,6 +6,7 @@ module.exports = {
     '<rootDir>/jest.setup.files2.js',
   ],
   setupFilesAfterEnv: [
+    '<rootDir>/jest.setup.filesAfterEnv.setTestName.js',
     '<rootDir>/jest.setup.filesAfterEnv1.js',
     '<rootDir>/jest.setup.filesAfterEnv2.js',
   ],
