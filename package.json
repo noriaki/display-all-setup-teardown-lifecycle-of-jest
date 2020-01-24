@@ -7,10 +7,16 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "yarn": "1.x"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:perform": "DEBUG=jest:* jest --no-cache",
+    "test:concurrent": "yarn test:perform ./concurrent",
+    "test:sequential": "yarn test:perform ./sequential",
+    "test:concurrent:run-in-band": "yarn test:concurrent --run-in-band",
+    "test:sequential:run-in-band": "yarn test:sequential --run-in-band"
   },
   "devDependencies": {
     "debug": "^4.1.1",
