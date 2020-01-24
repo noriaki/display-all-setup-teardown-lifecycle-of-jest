@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "debug": "^4.1.1",
-    "jest": "^24.9.0",
+    "jest": "^25.1.0",
     "supports-color": "^7.1.0"
   }
 }
