@@ -6,16 +6,16 @@ const wait = require('../src/wait');
 debug('beginning of file');
 
 beforeAll(() => { debug('beforeAll'); });
-beforeEach(() => { debug('beforeEach'); });
+beforeEach(() => { debug('beforeEach {%s}', global.getTestName()); });
 afterAll(() => { debug('afterAll'); });
-afterEach(() => { debug('afterEach'); });
+afterEach(() => { debug('afterEach {%s}', global.getTestName()); });
 
 [1, 1800, 700, 1, 300, 1].map((delay, i) => {
   const no = i + 1;
   it(`test${no}`, async () => {
-    debug('test%s (start)', no);
+    debug('test%s (started)', no);
     expect(await wait(delay)).toBe(true);
-    debug('test%s (end)', no);
+    debug('test%s (finished)', no);
   });
 });
 
