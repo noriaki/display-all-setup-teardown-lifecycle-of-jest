@@ -1,3 +1,4 @@
-const { appendFileSync } = require('fs');
+const debug = require('./src/logger')('jest:setupFiles');
+const filename = require('path').basename(__filename);
 
-appendFileSync(global.logPath, `setupFiles 2 in ${global.basename}\n`);
+debug('%s in context of {%s}', filename, global.basename);
