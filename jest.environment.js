@@ -1,24 +1,26 @@
-const { basename } = require('path');
+const { basename, resolve } = require('path');
+const { appendFileSync } = require('fs');
 const NodeEnvironment = require('jest-environment-node');
 
 module.exports = class MyJestEnvironment extends NodeEnvironment {
   constructor(config, context) {
     super(config, context);
 
-    this.basename = basename(context.testPath);
+    this.global.basename = basename(context.testPath);
+    this.global.logPath = resolve('jest.console.log');
 
-    console.log(`MyJestEnvironment#constructor in ${this.basename}\n`);
+    appendFileSync(this.global.logPath, `MyJestEnvironment#constructor in ${this.global.basename}\n`);
 
   }
 
   async setup() {
-    console.log(`MyJestEnvironment#setup in ${this.basename}\n`);
+    appendFileSync(this.global.logPath, `MyJestEnvironment#setup in ${this.global.basename}\n`);
 
     await super.setup();
   }
 
   async teardown() {
-    console.log(`MyJestEnvironment#teardown in ${this.basename}\n`);
+    appendFileSync(this.global.logPath, `MyJestEnvironment#teardown in ${this.global.basename}\n`);
 
     await super.teardown();
   }
